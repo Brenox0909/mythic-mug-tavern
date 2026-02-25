@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mythic Mug Tavern Simulator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Metamorphous&display=swap"
+        rel="stylesheet">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="game-container"></div>
+
+    <!-- Overlay de Início (Garantido no topo) -->
+    <div id="start-overlay">
+        <div class="glass start-card">
+            <h1 class="magic-text">Mythic Mug Tavern</h1>
+            <p>Gerencie sua taverna medieval</p>
+            <button id="start-btn">ENTRAR NA TAVERNA</button>
+            <div class="controls-hint">
+                [W,A,S,D] Mover | [G] Grimório | [E] Interagir
+            </div>
+        </div>
+    </div>
+
+    <div id="ui-layer">
+        <div id="crosshair"></div>
+
+        <div id="stats-panel" class="glass">
+            <div class="stat">💰 <span id="gold-value">500</span></div>
+            <div class="stat">⭐ <span id="rep-value">10</span></div>
+        </div>
+
+        <div id="inventory-bar" class="glass">
+            <div class="inv-slot" id="slot-mead"></div>
+            <div class="inv-slot" id="slot-meat"></div>
+            <div class="inv-slot"></div>
+        </div>
+
+        <div id="interaction-prompt">Pressione [E]</div>
+        <div id="game-message"></div>
+
+        <div id="grimoire-overlay" class="hidden">
+            <div class="grimoire-content glass">
+                <h1 class="magic-text">Grimório</h1>
+                <div class="shop-items">
+                    <div class="shop-item">
+                        <span>🍺 Hidromel (5x)</span>
+                        <button onclick="window.game.buyItem('mead', 50)">50 Gold</button>
+                    </div>
+                </div>
+                <button class="close-btn" onclick="window.game.toggleGrimoire()">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="src/main.js"></script>
+</body>
+
+</html>
