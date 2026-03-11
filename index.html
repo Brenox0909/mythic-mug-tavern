@@ -42,9 +42,11 @@
         </div>
 
         <div id="inventory-bar" class="glass">
-            <div class="inv-slot" id="slot-mead"></div>
-            <div class="inv-slot" id="slot-meat"></div>
-            <div class="inv-slot"></div>
+            <div class="inv-slot" id="slot-mead" title="Hidromel"></div>
+            <div class="inv-slot" id="slot-meat" title="Carne"></div>
+            <div class="inv-slot" id="slot-potion" title="Poção"></div>
+            <div class="inv-slot" id="slot-dragon-meat" title="Carne de Dragão"></div>
+            <div class="inv-slot" id="slot-mandrake" title="Mandrágora Frita"></div>
         </div>
 
         <div id="interaction-prompt">Pressione [E]</div>
@@ -57,6 +59,18 @@
                     <div class="shop-item">
                         <span>🍺 Hidromel (5x)</span>
                         <button onclick="window.game.buyItem('mead', 50)">50 Gold</button>
+                    </div>
+                    <div class="shop-item">
+                        <span>🧪 Poção (2x)</span>
+                        <button onclick="window.game.buyItem('potion', 80)">80 Gold</button>
+                    </div>
+                    <div class="shop-item">
+                        <span>🐉 Carne Dragão (1x)</span>
+                        <button onclick="window.game.buyItem('dragon_meat', 120)">120 Gold</button>
+                    </div>
+                    <div class="shop-item">
+                        <span>🌿 Mandrágora (4x)</span>
+                        <button onclick="window.game.buyItem('mandrake', 60)">60 Gold</button>
                     </div>
                 </div>
                 <button class="close-btn" onclick="window.game.toggleGrimoire()">Fechar</button>
